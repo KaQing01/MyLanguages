@@ -13,7 +13,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: 'https://mylanguages.vercel.app',
+    origin: 'https://my-languages-sepia.vercel.app',
     credentials: true,
   })
 );
