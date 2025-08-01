@@ -5,7 +5,7 @@ function Favorites() {
 
   const fetchFavorites = async () => {
     try {
-      const res = await fetch('http://localhost:5050/api/words?isFavorite=true', {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/words?isFavorite=true`, {
         credentials: 'include',
       });
       if (res.ok) {

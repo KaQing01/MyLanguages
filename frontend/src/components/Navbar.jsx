@@ -5,7 +5,7 @@ function Navbar({ isLoggedIn, setIsLoggedIn, increaseFont, decreaseFont }) {
   const navigate = useNavigate();
 
   const handleLogout = async () => {
-    const res = await fetch('http://localhost:5050/auth/logout', {
+    const res = await fetch(`${process.env.REACT_APP_API_URL}/auth/logout`, {
         method: 'POST',
         credentials: 'include',
       });

@@ -18,7 +18,7 @@ function Form({ onWordAdded }) {
   };
 
   const handleSubmit = async (e) => {e.preventDefault();
-    const res = await fetch('http://localhost:5050/api/words', {
+    const res = await fetch(`${process.env.REACT_APP_API_URL}/api/words`, {
       method: 'POST',
       credentials: 'include',
       headers: { 'Content-Type': 'application/json' },
