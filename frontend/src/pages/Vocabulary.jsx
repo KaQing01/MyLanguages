@@ -18,7 +18,7 @@ function Vocabulary() {
 
   // Fetch all words
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}/api/words`, {
+    fetch(`${import.meta.env.REACT_APP_API_URL}/api/words`, {
       credentials: 'include',
     })
       .then((res) => res.json())
@@ -26,7 +26,7 @@ function Vocabulary() {
   }, []);
 
   const handleDelete = async (id) => {
-    const res = await fetch(`${process.env.REACT_APP_API_URL}/api/words/${id}`, {
+    const res = await fetch(`${import.meta.env.REACT_APP_API_URL}/api/words/${id}`, {
       method: 'DELETE',
       credentials: 'include',
     });
@@ -58,7 +58,7 @@ function Vocabulary() {
 
   const handleEditSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch(`${process.env.REACT_APP_API_URL}/api/words/${editingId}`, {
+    const res = await fetch(`${import.meta.env.REACT_APP_API_URL}/api/words/${editingId}`, {
       method: 'PATCH',
       credentials: 'include',
       headers: { 'Content-Type': 'application/json' },
@@ -76,7 +76,7 @@ function Vocabulary() {
 
   const toggleFavorite = async (word) => {
     const updated = { ...word, isFavorite: !word.isFavorite };
-    const res = await fetch(`${process.env.REACT_APP_API_URL}/api/words/${word._id}`, {
+    const res = await fetch(`${import.meta.env.REACT_APP_API_URL}/api/words/${word._id}`, {
       method: 'PATCH',
       credentials: 'include',
       headers: { 'Content-Type': 'application/json' },

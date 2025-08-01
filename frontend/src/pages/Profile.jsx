@@ -4,7 +4,7 @@ function Profile() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}/auth/profile`, {
+    fetch(`${import.meta.env.REACT_APP_API_URL}/auth/profile`, {
       credentials: 'include',
     })
       .then(res => res.json())

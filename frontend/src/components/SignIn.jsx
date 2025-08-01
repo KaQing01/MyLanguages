@@ -8,7 +8,7 @@ function SignIn({ setIsLoggedIn }) {
 
   const handleLogIn = async (e) => { 
     e.preventDefault();
-    const res = await fetch(`${process.env.REACT_APP_API_URL}/auth/login`, {
+    const res = await fetch(`${import.meta.env.REACT_APP_API_URL}/auth/login`, {
       method: 'POST',
       credentials: 'include',
       headers: { 'Content-Type': 'application/json' },
